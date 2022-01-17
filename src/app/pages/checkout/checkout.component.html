@@ -53,7 +53,7 @@
           placeholder=""
         >
           <mat-option [value]="tienda.id" *ngFor="let tienda of stores"> <!--[value]="tienda.name" mando solo el valor a guardar del name-->  
-            {{ tienda.name }} ---- {{ tienda.openingHours }}
+            {{ tienda.name }} - {{ tienda.openingHours }}
           </mat-option>
         </mat-select>
       </mat-form-field>
