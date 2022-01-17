@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <span>Mi carrito de compras</span>
+  <nav>
+    <ul>
+      <li><a routerLink="/products" routerLinkActive="active">Productos</a></li>
+      <!-- <li><a routerLink="/checkout" routerLinkActive="active">Checkout</a></li> -->
+    </ul>
+  </nav>
+  <span class="spacer"></span>
+  <app-cart class="mouseHover" (click)="goToCheckout()"></app-cart>
+</mat-toolbar>

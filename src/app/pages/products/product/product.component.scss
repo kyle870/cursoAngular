@@ -1,0 +1,20 @@
+.card {
+  margin: 10px;
+  min-height: 180px;
+  min-width: 400px;
+  max-width: 400px;
+  height: 100%;
+  background-color: rgb(204, 223, 241);
+  color: rgb(0, 4, 54);
+  transition: ease-in-out 0.3s;
+  //box-shadow: 0px 0px 6px 0px rgba(102, 102, 102, 0.3);
+
+  &:hover {
+    //background-color: #a6c2ff;
+    box-shadow: 0px 0px 20px 0px rgba(39, 39, 39, 0.5);
+  }
+}
+
+button {
+  width: 100%;
+}

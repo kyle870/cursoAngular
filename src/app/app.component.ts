@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cursoAngular';
+
+  getName(): void{
+    console.log('Hola Dominicode');
+  }
 }

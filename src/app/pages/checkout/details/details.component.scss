@@ -1,0 +1,22 @@
+.container__table {
+  display: flex;
+  justify-content: center;
+  //align-items: center;
+  margin-bottom: 1rem;
+  .tabla {
+    box-shadow: 0px 0px 20px 1px rgba(176, 176, 176, 0.74);
+    font-size: 1rem;
+    width: 80%;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    th {
+      font-weight: 700;
+      border-bottom: 2px solid #4c4c4c;
+    }
+  }
+}
+
+.item-name{
+ text-align: left; 
+}

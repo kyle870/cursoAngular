@@ -1,0 +1,12 @@
+  <ng-container *ngIf="{total: total$ | async, quantity: quantity$ | async} as dataCart">
+      <!-- {{dataCart|json}} -test -->
+      <ng-container *ngIf="dataCart.total"> <!--Si hay algo, aparece la data...mientras, si es "null", pues no-->
+          <mat-icon class="cartIcon">add_shopping_cart</mat-icon>
+          {{dataCart.total | currency}}
+          ({{dataCart.quantity}})
+      </ng-container>
+  </ng-container>
+  <!--interpolación, tomamos las variables del servicio-->
+  <!-- {{quantity$|async|json}} - Quantity &nbsp;
+  {{total$|async|json}} - Total  -->
+  <!-- {{cart$|async|json}} - Cart  -->

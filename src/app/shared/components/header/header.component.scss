@@ -1,0 +1,28 @@
+.spacer{
+    flex: 1 1 auto;
+}
+
+li{
+    list-style-type: none;
+    display: inline;
+    a{
+        margin:0 0.5rem;
+        color: rgb(255, 255, 255);
+        text-decoration: underline 0.2rem rgba(255, 255, 255, 0);
+        transition: text-decoration-color 0.5s;
+        &:hover{
+            //color: rgb(159, 220, 255);
+            text-decoration-color: rgba(255, 255, 255, 1);
+        }
+    }
+}
+
+.mouseHover{
+    padding: 0.5rem;
+    transition: all 0.2s ease-in-out;
+    border-radius: 1rem;
+    &:hover{
+        background-color: rgba(63, 145, 165, 0.6);
+        cursor: pointer;
+        }
+}
