@@ -13,4 +13,9 @@ export class ProductsService {
   getProducts():Observable<Product[]>{ //Un observable es un flujo de datos en el tiempo
     return this.http.get<Product[]>(this.apiUrl);
   }
+
+  updateStock(productId: number, stock: number):Observable<any>{ 
+    const body = ["stock",stock];
+    return this.http.patch<any>(`${this.apiUrl}/products/${productId}`,body)
+  }
 }

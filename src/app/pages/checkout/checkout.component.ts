@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { switchMap, tap } from 'rxjs';
+import { Router } from '@angular/router';
+import { delay, switchMap, tap } from 'rxjs';
 import { Details, Order } from 'src/app/shared/interfaces/order.interface';
 import { Store } from 'src/app/shared/interfaces/stores.interface';
 import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.service';
@@ -15,7 +16,7 @@ import { DataService } from '../products/services/data.service';
 export class CheckoutComponent implements OnInit {
   cart: Product[] = [];
   stores: Store[] = []; //array de las tiendas
-  isDelivery = false;
+  isDelivery = true;
 
 
   model = {
@@ -25,7 +26,7 @@ export class CheckoutComponent implements OnInit {
     city: '',
   };
 
-  constructor(private DataSvc: DataService, private shoppingCartSvc: ShoppingCartService) {}
+  constructor(private DataSvc: DataService, private shoppingCartSvc: ShoppingCartService, private router:Router) {}
 
   ngOnInit(): void {
     this.getStores();
@@ -44,7 +45,7 @@ export class CheckoutComponent implements OnInit {
       //store Id y store Name
       ...FormData,
       date: this.getCurrentDay(),
-      pickup: this.isDelivery,
+      isDelivery: this.isDelivery,
 
     }
     this.DataSvc.saveOrder(data).pipe(
@@ -54,7 +55,9 @@ export class CheckoutComponent implements OnInit {
         const details = this.prepareDetails();
         return this.DataSvc.saveDetailsOrder({details, orderId});
       }),
-      tap(res => console.log('Finish ->', res))//que muestre el objeto "data" en consola
+      tap(res => this.router.navigate(['/checkout/thank-you-page'])),//que muestre el objeto "data" en consola
+      delay(2000),//crear un retraso de 2sec
+      tap(()=> this.shoppingCartSvc.resetCart())//método de reseteado del carro luego de enviar a la página de gracias por su compra
     ).subscribe(); //manda a llamar el metodo de guardar orden del "data.service.ts"
   }
 
@@ -70,13 +73,14 @@ export class CheckoutComponent implements OnInit {
     return new Date().toLocaleDateString();
   }
 
-  //metodo para gestionar el detail
+  //metodo para gestionar el detail de la orden
   private prepareDetails(): Details[]{
     const details: Details[] = []; //un details vacío, de tipo "Details[]"
 
     this.cart.forEach((res: Product) => {
       //console.log(res);
       const {id:productId, name:productName, qty:quantity, stock} = res;
+      const updateStock = (stock - quantity);
       details.push({productId,productName,quantity});
     });
     return details;

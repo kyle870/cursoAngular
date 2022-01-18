@@ -131,6 +131,42 @@
       "date": "17/1/2022",
       "pickup": false,
       "id": 2
+    },
+    {
+      "name": "Osmar",
+      "store": 4,
+      "date": "18/1/2022",
+      "pickup": false,
+      "id": 3
+    },
+    {
+      "name": "Osmar",
+      "store": 5,
+      "date": "18/1/2022",
+      "pickup": false,
+      "id": 4
+    },
+    {
+      "name": "Osmar",
+      "shippingAddress": "San Judas",
+      "city": "Managua",
+      "date": "18/1/2022",
+      "isDelivery": true,
+      "id": 5
+    },
+    {
+      "name": "Osmar",
+      "store": 1,
+      "date": "18/1/2022",
+      "isDelivery": false,
+      "id": 6
+    },
+    {
+      "name": "Osmar",
+      "store": 4,
+      "date": "18/1/2022",
+      "isDelivery": false,
+      "id": 7
     }
   ],
   "detailsOrders": [
@@ -150,6 +186,66 @@
       ],
       "orderId": 2,
       "id": 2
+    },
+    {
+      "details": [
+        {
+          "productId": 1,
+          "productName": "Essential TypeScript 4: From Beginner to Pro",
+          "quantity": 2
+        }
+      ],
+      "orderId": 3,
+      "id": 3
+    },
+    {
+      "details": [
+        {
+          "productId": 1,
+          "productName": "Essential TypeScript 4: From Beginner to Pro",
+          "quantity": 1
+        }
+      ],
+      "orderId": 4,
+      "id": 4
+    },
+    {
+      "details": [
+        {
+          "productId": 2,
+          "productName": "Hackeando el cerebro de tus compradores: PsychoGrowth",
+          "quantity": 2
+        }
+      ],
+      "orderId": 5,
+      "id": 5
+    },
+    {
+      "details": [
+        {
+          "productId": 2,
+          "productName": "Hackeando el cerebro de tus compradores: PsychoGrowth",
+          "quantity": 2
+        },
+        {
+          "productId": 1,
+          "productName": "Essential TypeScript 4: From Beginner to Pro",
+          "quantity": 1
+        }
+      ],
+      "orderId": 6,
+      "id": 6
+    },
+    {
+      "details": [
+        {
+          "productId": 1,
+          "productName": "Essential TypeScript 4: From Beginner to Pro",
+          "quantity": 3
+        }
+      ],
+      "orderId": 7,
+      "id": 7
     }
   ]
 }

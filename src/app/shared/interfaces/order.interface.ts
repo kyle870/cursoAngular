@@ -13,12 +13,12 @@ export interface Details {
  */
 
 export interface Order{
+    id: number;
     name: string;
+    date: string;
     shippingAddress: string;
     city: string;
-    date: string;
-    pickup: boolean;
-    id: number;
+    isDelivery: boolean;
 }
 
 export interface DetailsOrder{

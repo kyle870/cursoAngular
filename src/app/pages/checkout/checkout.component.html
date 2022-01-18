@@ -18,9 +18,9 @@
     {{isDelivery}} - isDelivery
     <mat-radio-group class="form__element">
       <p>Choose an option:</p>
-      <mat-radio-button value="pickup" color="primary" (change)="onPickupOrDelivery(false)" checked
+      <mat-radio-button value="pickup" color="primary" (change)="onPickupOrDelivery(false)"
         >Pickup</mat-radio-button>
-      <mat-radio-button value="delivery" (change)="onPickupOrDelivery(true)"
+      <mat-radio-button value="delivery" (change)="onPickupOrDelivery(true)" checked=""
         >Delivery</mat-radio-button>
     </mat-radio-group>
     <ng-container *ngIf="isDelivery else showStores"> <!--Se ocupa esta directiva para mostrar los campos según el booleano-->

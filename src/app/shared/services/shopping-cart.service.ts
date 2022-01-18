@@ -33,6 +33,13 @@ export class ShoppingCartService {
       this.calcTotal();
   }
 
+  //método para resetear las variables del carrito de compra
+  public resetCart(): void{
+    this.cartSubject.next([]);
+    this.totalSubject.next(0);
+    this.quantitySubject.next(0);
+  }
+
   /** Métodos para el uso del carrito de compras, son privados, exclusivos para este servicio */
   private addToCart(product:Product): void{
     const isProductInCart = this.products.find(({id})=> id === product.id) //verificar si hay un producto con ese mismo id

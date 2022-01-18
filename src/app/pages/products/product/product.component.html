@@ -4,7 +4,8 @@
   </mat-card-header>
   <mat-card-content> {{ product.description }} </mat-card-content>
   <mat-card-actions>
-    <button mat-flat-button color="primary"(click)="onClick()">
+    <button mat-flat-button color="primary"(click)="onClick()"
+    [disabled]="product.stock === 0"> <!--desabilitar si el stock del producto es 0-->
       Buy {{ product.price | currency }} <!--Un pipe comienza por el uso del signo | indicando el otro formato a usar-->
       <mat-icon>add_shopping_cart</mat-icon>
     </button>
