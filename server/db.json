@@ -113,7 +113,7 @@
       "price": 20,
       "description": "Plug & play. Easy to use,powered by USB port. No external driver and Power needed. Just plug it into your USB port and the DVD driver will be detected",
       "categoryId": 3,
-      "stock": 10
+      "stock": 9
     }
   ],
   "orders": [
@@ -167,6 +167,41 @@
       "date": "18/1/2022",
       "isDelivery": false,
       "id": 7
+    },
+    {
+      "name": "Osmar",
+      "store": 2,
+      "date": "1/2/2022",
+      "isDelivery": false,
+      "id": 8
+    },
+    {
+      "name": "Osmar",
+      "store": 2,
+      "date": "1/2/2022",
+      "isDelivery": false,
+      "id": 9
+    },
+    {
+      "name": "Osmar",
+      "store": 5,
+      "date": "1/2/2022",
+      "isDelivery": false,
+      "id": 10
+    },
+    {
+      "name": "Osmar",
+      "store": 5,
+      "date": "1/2/2022",
+      "isDelivery": false,
+      "id": 11
+    },
+    {
+      "name": "Osmar",
+      "store": 5,
+      "date": "1/2/2022",
+      "isDelivery": false,
+      "id": 12
     }
   ],
   "detailsOrders": [
@@ -246,6 +281,42 @@
       ],
       "orderId": 7,
       "id": 7
+    },
+    {
+      "details": [
+        {
+          "productId": 3,
+          "productName": "Angular Routing: Learn To Create client-side and SPA with Routing and Navigation",
+          "quantity": 2
+        },
+        {
+          "productId": 4,
+          "productName": "SanDisk 128GB Ultra MicroSDXC UHS-I Memory Card with Adapter",
+          "quantity": 1
+        }
+      ],
+      "orderId": 8,
+      "id": 8
+    },
+    {
+      "details": [],
+      "orderId": 9,
+      "id": 9
+    },
+    {
+      "details": [],
+      "orderId": 10,
+      "id": 10
+    },
+    {
+      "details": [],
+      "orderId": 11,
+      "id": 11
+    },
+    {
+      "details": [],
+      "orderId": 12,
+      "id": 12
     }
   ]
 }

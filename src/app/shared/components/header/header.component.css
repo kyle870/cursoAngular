@@ -1,0 +1,31 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+li {
+  list-style-type: none;
+  display: inline;
+}
+li a {
+  margin: 0 0.5rem;
+  color: white;
+  -webkit-text-decoration: underline 0.2rem rgba(255, 255, 255, 0);
+          text-decoration: underline 0.2rem rgba(255, 255, 255, 0);
+  transition: -webkit-text-decoration-color 0.5s;
+  transition: text-decoration-color 0.5s;
+  transition: text-decoration-color 0.5s, -webkit-text-decoration-color 0.5s;
+}
+li a:hover {
+  -webkit-text-decoration-color: white;
+          text-decoration-color: white;
+}
+
+.mouseHover {
+  padding: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  border-radius: 1rem;
+}
+.mouseHover:hover {
+  background-color: rgba(63, 145, 165, 0.6);
+  cursor: pointer;
+}/*# sourceMappingURL=header.component.css.map */

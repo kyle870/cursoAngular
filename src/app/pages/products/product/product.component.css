@@ -1,0 +1,17 @@
+.card {
+  margin: 10px;
+  min-height: 180px;
+  min-width: 400px;
+  max-width: 400px;
+  height: 100%;
+  background-color: #ccdff1;
+  color: #000436;
+  transition: ease-in-out 0.3s;
+}
+.card:hover {
+  box-shadow: 0px 0px 20px 0px rgba(39, 39, 39, 0.5);
+}
+
+button {
+  width: 100%;
+}/*# sourceMappingURL=product.component.css.map */

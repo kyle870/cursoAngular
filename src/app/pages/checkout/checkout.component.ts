@@ -7,6 +7,7 @@ import { Store } from 'src/app/shared/interfaces/stores.interface';
 import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.service';
 import { Product } from '../products/interfaces/product.interface';
 import { DataService } from '../products/services/data.service';
+import { ProductsService } from '../products/services/products.service';
 
 @Component({
   selector: 'app-checkout',
@@ -26,7 +27,7 @@ export class CheckoutComponent implements OnInit {
     city: '',
   };
 
-  constructor(private DataSvc: DataService, private shoppingCartSvc: ShoppingCartService, private router:Router) {}
+  constructor(private DataSvc: DataService, private shoppingCartSvc: ShoppingCartService, private router:Router, private productSvc: ProductsService) {}
 
   ngOnInit(): void {
     this.getStores();
@@ -48,7 +49,8 @@ export class CheckoutComponent implements OnInit {
       isDelivery: this.isDelivery,
 
     }
-    this.DataSvc.saveOrder(data).pipe(
+    this.DataSvc.saveOrder(data)
+    .pipe(
       tap(res => console.log('Order ->',res)), 
       switchMap((order) =>{
         const orderId = order.id;
@@ -77,12 +79,16 @@ export class CheckoutComponent implements OnInit {
   private prepareDetails(): Details[]{
     const details: Details[] = []; //un details vacío, de tipo "Details[]"
 
-    this.cart.forEach((res: Product) => {
+    this.cart.forEach((product: Product) => {
       //console.log(res);
-      const {id:productId, name:productName, qty:quantity, stock} = res;
+      const {id:productId, name:productName, qty:quantity, stock} = product;
       const updateStock = (stock - quantity);
-      details.push({productId,productName,quantity});
-    });
+      this.productSvc.updateStock(productId, updateStock)
+      .pipe(
+        tap(() => details.push({productId,productName,quantity}))
+      )
+      .subscribe()
+    })
     return details;
   }
 

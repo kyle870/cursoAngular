@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  padding: 1.5rem;
+}
+
+form {
+  font-size: small;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 2px 19px 5px rgba(176, 176, 176, 0.74);
+  -webkit-box-shadow: 1px 2px 19px 5px rgba(176, 176, 176, 0.74);
+  -moz-box-shadow: 1px 2px 19px 5px rgba(176, 176, 176, 0.74);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+form p {
+  margin: 0 0.5rem;
+}
+form .form__element {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+form mat-radio-button {
+  margin: 0 0.5rem;
+}
+
+.container_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container_button button {
+  margin-bottom: 1rem;
+}/*# sourceMappingURL=checkout.component.css.map */
